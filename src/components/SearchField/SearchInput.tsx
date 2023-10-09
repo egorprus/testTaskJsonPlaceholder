@@ -7,7 +7,7 @@ export const SearchInput = () => {
   const dispatch = useAppDispatch();
   const { searchValue } = useAppSelector((state: RootState) => state.posts);
 
-  /** Обработчик изменения значения поля фильтра. */
+  /** Filter field value change handler. */
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       dispatch(setSearchValue(e.target.value));

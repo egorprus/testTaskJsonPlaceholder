@@ -1,6 +1,6 @@
 import { IPost } from "../models";
 
-/** Получить часть списка для конкретной страницы. */
+/** Get part of the list for a current page. */
 export function getListRange(currentPage: number, posts: IPost[]): IPost[] {
   let range = posts.slice(0, 10);
   if (currentPage > 1) {

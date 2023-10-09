@@ -2,22 +2,22 @@ import { OperationType } from "../enums";
 import { RootState, useAppDispatch, useAppSelector } from "../store/store";
 import { setCurrentPage } from "../store/postsSlice";
 
-/** Хук пагинации. */
+/** Hook paggination. */
 export const usePaginations = () => {
   const dispatch = useAppDispatch();
   const { currentPage, posts, searchValue, filteredPosts } = useAppSelector(
     (state: RootState) => state.posts
   );
 
-	/** Флаг положительного числа. */
+	/** Positive number flag. */
   const isPositive = currentPage - 1 > 0;
 
-	/** Флаг что число меньше максимального значения. */
+	/** Flag that the number is less than the max value. */
   const isLessThanLimit = searchValue
     ? (currentPage + 1) * 10 <= filteredPosts.length
     : (currentPage + 1) * 10 <= posts.length;
 	
-	/**  Обработчик  перехода по страницам. */
+	/**  Page jump handler. */
   const handleClick = (operation: OperationType) => {
     switch (operation) {
       case OperationType.decrement:

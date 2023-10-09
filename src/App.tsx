@@ -10,7 +10,6 @@ function App() {
   if (isLoading) {
     return <h1>loading...</h1>;
   }
-
   return (
     <Router>
       <StyledApp>

@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchPosts } from "../api/apiCall";
 import { useAppDispatch } from "../store/store";
 import { setCurrentPost, setPosts } from "../store/postsSlice";
-/** Хук обработки запроса получения всех постов. */
+/** Hook for processing a request to get all posts. */
 const usePostsQuery = () => {
   const dispatch = useAppDispatch();
   return useQuery(["posts"], () => fetchPosts(), {
@@ -12,7 +12,7 @@ const usePostsQuery = () => {
 		retry: 1,
   });
 };
-/** Хук обработки запроса получения запроса по ID. */
+/** Hook for processing a request to recicve a post by ID. */
 const usePostQuery = (params: string) => {
 	const dispatch = useAppDispatch();
 	const queryKeys = ['posts'];
